@@ -1,0 +1,29 @@
+TODO: ---------------------------------------------------------------------
+
+1. 
+2. 
+
+---------------------------------------------------------------------------
+
+
+
+NOTAS: --------------------------------------------------------------------
+
+Tive que alterar os makefiles porque aqui não há /usr/share/java
+Logo há que ter atenção para não transportar estes makefiles para a máquina virtual
+
+
+
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+Compilar tudo: 
+~/workspace/ $ make
+
+Executar:
+~/workspace/ $ ./runfile

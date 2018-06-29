@@ -1,0 +1,38 @@
+
+05-11-2015.17h50:
+
+    *** MenuBuilder da core: 
+    Todos os comandos associados levam agora apenas o Editor como argumento, antes havia algumas que levavam o Documento (AddAuthor, ShowMetadata, ShowIndex, ShowTextElement).
+    Qual era o problema? Quando o primeiro menu é aberto (seja de correr o programa ou sair do menu de edição) ele usava apenas o documento X associado ao editor no momento de abertura, logo quando se fizesse "Abrir" para outro documento Y, este nunca iria ser realmente aberto para os comandos acima mencionados (ficando em uso o documento X), porque não foi feito nenhum outro menu.
+    
+    *** Comandos Abrir e Guardar: 
+    Pequenos tweaks aos comandos.
+    FileNotFoundException já está a ser apanhada.
+    
+07-11-2015.17h50:
+
+    *** Section core:
+    Adicionado um construtor que incializa o identificador único para além do título (para usar no tratamento de texto)
+    
+07-11-2015.21h32:
+
+    *** Document core:
+    Novo algoritmo de remoção de elementos:
+    - já remove parágrafos e secções como deve de ser, recursivamente.
+    
+    Novo algoritmo de inserção para identificadores únicos: 
+    - no caso de já existir um elemento X com o identificador que queremos dar ao elemento Y o elemento X deixará de ter identificador único (i.e. "")
+    - no caso de já existir um identificador A para o elemento X, este passará a ter apenas o identificador B, e o tree node A será removido para não haver duplicados.
+   
+07-11-2015.23h12:
+    
+    *** Document core:
+    removeElement já remove também dos identificadores únicos, não deixando lixo para trás.
+    
+09-11-2015.20h31:
+
+    *** Document core:
+    getDocumentSize já tem em conta o tamanho do título também.
+    
+    *** Textui main:
+    System.out.println's substituídos por IO.println para fim de testes automáticos.

@@ -1,0 +1,12 @@
+#
+# Script to run java text editor
+#
+
+TEST=dailies/A-016-001-M-ok
+clear
+if [ -e "$TEST.import" ]
+    then
+        java -Dimport="$TEST.import" -cp "po-uilib/po-uilib.jar:edt-support/edt-support.jar:edt-core/edt-core.jar:edt-textui/edt-textui.jar" edt.textui.TextEditor
+    else
+        java -cp "po-uilib/po-uilib.jar:edt-support/edt-support.jar:edt-core/edt-core.jar:edt-textui/edt-textui.jar" edt.textui.TextEditor
+fi

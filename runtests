@@ -1,0 +1,21 @@
+#
+# Script to run java text editor
+# -Dimport="dailies/$TEST.import" 
+
+clear
+
+TEST=A-011-002-M-ok
+
+for i in dailies/*.in;
+    do
+        TEST=${i%.in}
+        echo "$TEST";
+        if [ -e "dailies/$TEST.import" ]
+            then
+                java -Dimport="$TEST.import" -Din="$TEST.in" -Dout="$TEST.outhyp" -cp "po-uilib/po-uilib.jar:edt-support/edt-support.jar:edt-core/edt-core.jar:edt-textui/edt-textui.jar" edt.textui.TextEditor
+            else
+                java -Din="$TEST.in" -Dout="$TEST.outhyp" -cp "po-uilib/po-uilib.jar:edt-support/edt-support.jar:edt-core/edt-core.jar:edt-textui/edt-textui.jar" edt.textui.TextEditor
+        fi
+    done
+    
+#diff dailies/$TEST.out dailies/$TEST.outhyp

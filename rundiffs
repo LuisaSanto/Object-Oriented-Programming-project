@@ -1,0 +1,13 @@
+#
+# Script to run java text editor
+# -Dimport="dailies/$TEST.import" 
+
+clear
+
+
+for i in dailies/*.in;
+    do
+        TEST=${i%.in}
+        echo "$TEST";
+        diff $TEST.out $TEST.outhyp
+    done
